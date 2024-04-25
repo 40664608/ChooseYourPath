@@ -1,39 +1,67 @@
+:root {
+    --primary-color: #4CAF50; /* Base color for buttons */
+    --hover-color: #45a049; /* Hover color for buttons */
+    --header-background: #333; /* Background color for header */
+    --header-color: white; /* Text color for header and buttons */
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Light background for contrast */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 15px;
+    display: flex; /* Flex layout for better alignment */
+    justify-content: space-between; /* Align header items */
+    align-items: center; /* Center content vertically */
+    background-color: var(--header-background); /* Use defined variable */
+    color: var(--header-color);
+    padding: 15px; /* Uniform padding */
 }
 
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove list bullet points */
+    display: flex; /* Flex layout for navigation */
+    flex-wrap: wrap; /* Wrap items if needed for responsiveness */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline; /* Inline list items for horizontal layout */
+    margin-right: 20px; /* Space between items */
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
+    text-decoration: none; /* Remove underline from links */
+    color: var(--header-color); /* Use defined variable */
+}
+
+nav a:focus, button:focus {
+    outline: 2px solid #00f; /* Focus outline for accessibility */
 }
 
 button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 20px; /* Consistent padding for buttons */
+    background-color: var(--primary-color); /* Use defined variable */
+    color: var(--header-color); /* White text */
+    border: none; /* No border for a cleaner look */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for interactivity */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: var(--hover-color); /* Change color on hover */
+}
+
+@media (max-width: 600px) { /* Responsive design for smaller screens */
+    nav ul {
+        flex-direction: column; /* Vertical layout for navigation */
+        text-align: center; /* Center text */
+    }
+
+    nav ul li {
+        margin-right: 0; /* No margin between vertical items */
+        margin-bottom: 10px; /* Space between items */
+    }
 }
