@@ -5,7 +5,7 @@
     <title>Scene 5 - Hidden Path</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body onload="unlockAchievement('findHiddenPath'); unlockAchievement('exitForest');">
 <header>
     <h1>Choose Your Path</h1>
     <nav>
@@ -25,9 +25,6 @@
     <p>Following the trail, you find it leads to an exit from the forest. You've successfully escaped the dangers of the forest and completed your adventure.</p>
 
     <p>Congratulations! You've found your way out safely. Well done!</p>
-
-    unlockAchievement('findHiddenPath');
-    unlockAchievement('exitForest');
 
     <button onclick="window.location.href='../index.html'">Restart</button> <!-- To restart the game from the beginning -->
 

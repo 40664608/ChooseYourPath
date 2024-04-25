@@ -5,7 +5,7 @@
     <title>Scene 6 - Encounter with a Bear</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body onload="unlockAchievement('surviveDangerousCreature')">
 <header>
     <h1>Choose Your Path</h1>
     <nav>
@@ -25,8 +25,6 @@
     <p>While running, you notice a shed off to the side of the path. You quickly rush inside, slamming the door behind you. The bear growls and scratches at the door, but the shed seems sturdy enough to keep it out.</p>
 
     <p>After a while, the bear loses interest and walks away. You survived the encounter, but. What do you do next?</p>
-
-    unlockAchievement('surviveDangerousCreature');
 
     <button onclick="window.location.href='scene3.html'">Return to the Path</button>
     <button onclick="window.location.href='scene1.html'">Restart</button> <!-- Allows restarting the game -->
