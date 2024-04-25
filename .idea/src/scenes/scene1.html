@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scene 1</title>
+    <title>Scene 1 - Choose Your Path</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -20,9 +20,12 @@
 
 <main>
     <h2>You're lost in the forest.</h2>
-    <p>Which way do you go?</p>
-    <button onclick="location.href='scene2.html'">Take the broken bridge</button>
-    <button onclick="location.href='scene3.html'">Go around the river</button>
+    <p>You can hear water flowing and strange animal noises. Which way do you go?</p>
+
+    <button onclick="window.location.href='../scenes/scene2.html'">Take the broken bridge</button>
+    <button onclick="window.location.href='../scenes/scene3.html'">Go around the river</button>
+
+    <button onclick="window.history.back()">Back</button>
 </main>
 </body>
 </html>

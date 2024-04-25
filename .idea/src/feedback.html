@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <title>Feedback and Rating</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
 <header>
     <h1>Feedback and Rating</h1>
     <nav>
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="customisation.html">Customise</a></li>
             <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="feedback.html">Feedback & Rating</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <form>
+    <form onsubmit="submitFeedback(event)">
         <label for="feedback">Your Feedback:</label>
-        <textarea id="feedback" name="feedback" rows="5" cols="50"></textarea><br><br>
+        <textarea id="feedback" name="feedback" rows="5" cols="50" placeholder="Write your feedback here..."></textarea><br><br>
 
         <label for="rating">Rate the Game:</label>
         <select id="rating" name="rating">
@@ -31,7 +33,7 @@
             <option value="5">5</option>
         </select><br><br>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Submit Feedback</button>
     </form>
 </main>
 </body>

@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <title>Customisation</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
 <header>
     <h1>Customise Your Character</h1>
     <nav>
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="../feedback.html">Feedback & Rating</a></li>
+            <li><a href="feedback.html">Feedback & Rating</a></li>
+            <li><a href="customisation.html">Customisation</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <form>
+    <form onsubmit="saveCharacter(event)">
         <label for="characterName">Character Name:</label>
-        <input type="text" id="characterName" name="characterName"><br><br>
+        <input type="text" id="characterName" name="characterName" placeholder="Enter your character's name" required><br><br>
 
         <label for="characterGender">Character Gender:</label>
         <select id="characterGender" name="characterGender">

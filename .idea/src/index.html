@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <title>Choose Your Path</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 </head>
-<body>
+<body onload="checkResumeButton()"> <!-- Check for saved progress on page load -->
 <header>
     <h1>Choose Your Path</h1>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="customisation.html">Customise</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="feedback.html">Feedback & Rating</a></li>
+            <li><a href="index.html">Home</a></li> <!-- Current page -->
+            <li><a href="customisation.html">Customise</a></li> <!-- Customisation page -->
+            <li><a href="achievements.html">Achievements</a></li> <!-- Achievements page -->
+            <li><a href="feedback.html">Feedback & Rating</a></li> <!-- Feedback page -->
         </ul>
     </nav>
 </header>
 
 <main>
-    <button onclick="startGame()">Start Story</button>
+    <button onclick="startGame()">Start Story</button> <!-- Start new game -->
+    <button id="resumeButton" onclick="resumeGame()" style="display: none;">Resume Game</button> <!-- Initially hidden -->
+    <button onclick="saveGame()">Save Game</button> <!-- Save current progress -->
+    <button onclick="restartGame()">Restart Game</button> <!-- Restart the game -->
 </main>
 
-<script src="../scripts.js"></script>
 </body>
 </html>
