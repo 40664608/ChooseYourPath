@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scene 3 - Around the River</title>
+    <title>Scene 4 - Bridge Collapse</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body onload="unlockAchievement('getEatenByCrocodile')">
 <header>
     <h1>Choose Your Path</h1>
     <nav>
@@ -19,14 +19,14 @@
 </header>
 
 <main>
-    <h2>Going Around the River</h2>
-    <p>You decide to take the safer route, but the forest is big. There might be creatures lurking around. Which way do you choose?</p>
+    <h2>Bridge Collapse</h2>
+    <p>As you step onto the broken bridge, you start to shake as the bridge starts to collapse. You fall into the river below, where a crocodile awaits you.</p>
 
-    <button onclick="window.location.href='src/scenes/scene5.html'">Leave the path and go into the forest</button>
-    <button onclick="window.location.href='src/scenes/scene6.html'">Follow the path</button>
+    <p>The water starts pulling you in, and you struggle to stay afloat. The crocodile approaches, its jaws open wide...</p>
+
+    <button onclick="window.location.href='index.html'">Restart</button> <!-- To restart the game from the beginning -->
 
     <button onclick="window.history.back()">Back</button> <!-- To go back to the previous scene -->
-    <button onclick="window.location.href='../index.html'">Restart</button> <!-- To restart the game from the beginning -->
 </main>
 </body>
 </html>
