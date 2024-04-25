@@ -1,6 +1,6 @@
 // Start the game from the first scene
 function startGame() {
-    window.location.href = "src/scenes/scene1.html";
+    window.location.href = "scenes/scene1.html";
 }
 
 // Save game progress
@@ -32,16 +32,16 @@ function restartGame() {
     }
 }
 
+// Check if the "Resume" button should be visible based on saved progress
 function checkResumeButton() {
     const savedProgress = localStorage.getItem("gameProgress");
     const resumeButton = document.getElementById("resumeButton");
 
     if (resumeButton) {
-        resumeButton.style.display = savedProgress ? "inline" : "none";
+        resumeButton.style.display = savedProgress ? "inline" : "none"; //
     }
 }
 
-// Submit feedback with basic validation
 function submitFeedback(event) {
     event.preventDefault();
 
@@ -62,7 +62,6 @@ function submitFeedback(event) {
     alert("Thank you for your feedback!");
 }
 
-// Save character customization with validation
 function saveCharacter(event) {
     event.preventDefault();
 
