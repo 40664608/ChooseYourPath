@@ -14,27 +14,42 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="customisation.html">Customise</a></li>
             <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="feedback.html">Feedback & Rating</a></li>
+            <li><a href="feedback.html">Feedback & Rating</a></li> <!-- Current page -->
         </ul>
     </nav>
 </header>
 
 <main>
     <form onsubmit="submitFeedback(event)">
-        <label for="feedback">Your Feedback:</label>
-        <textarea id="feedback" name="feedback" rows="5" cols="50" placeholder="Write your feedback here..."></textarea><br><br>
+        <label for="feedback" aria-label="Your Feedback">
+            Your Feedback:
+        </label>
+        <textarea
+                id="feedback"
+                name="feedback"
+                rows="5"
+                cols="50"
+                placeholder="Write your feedback here..."
+                aria-required="true"
+                required>
+        </textarea><br><br>
 
-        <label for="rating">Rate the Game:</label>
-        <select id="rating" name="rating">
-            <option value="1">1</option>
+        <label for="rating" aria-label="Rate the Game">
+            Rate the Game:
+        </label>
+        <select id="rating" name="rating" aria-required="true">
+            <option value="1">1 (Poor)</option>
             <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="3">3 (Average)</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Excellent)</option>
         </select><br><br>
 
         <button type="submit">Submit Feedback</button>
     </form>
+
+    <div id="feedbackMessage" style="display: none;"></div>
 </main>
+
 </body>
 </html>

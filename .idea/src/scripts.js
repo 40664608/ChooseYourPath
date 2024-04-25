@@ -1,19 +1,20 @@
+// Start the game from the first scene
 function startGame() {
-    // Start from the first scene in the 'scenes' folder
     window.location.href = "scenes/scene1.html";
 }
 
+// Save game progress
 function saveGame() {
-    const gameProgress = {
-        currentScene: "scenes/scene1.html",
-    };
+    const currentScene = window.location.href;
+    const gameProgress = { currentScene };
 
-    localStorage.setItem('gameProgress', JSON.stringify(gameProgress));
+    localStorage.setItem("gameProgress", JSON.stringify(gameProgress));
     alert("Game progress saved!");
 }
 
+// Resume game from the last saved progress
 function resumeGame() {
-    const savedProgress = localStorage.getItem('gameProgress');
+    const savedProgress = localStorage.getItem("gameProgress");
 
     if (savedProgress) {
         const gameProgress = JSON.parse(savedProgress);
@@ -23,75 +24,87 @@ function resumeGame() {
     }
 }
 
+// Restart the game with confirmation
 function restartGame() {
     if (confirm("Are you sure you want to restart the game? All progress will be lost.")) {
-        localStorage.removeItem('gameProgress'); // Clear saved progress
+        localStorage.removeItem("gameProgress"); // Clear saved progress
         window.location.href = "index.html"; // Return to the start
     }
 }
 
 function checkResumeButton() {
-    const savedProgress = localStorage.getItem('gameProgress'); // Check for saved progress
+    const savedProgress = localStorage.getItem("gameProgress");
     const resumeButton = document.getElementById("resumeButton");
 
-    if (savedProgress) {
-        resumeButton.style.display = "inline"; // Show 'Resume' button if progress exists
-    } else {
-        resumeButton.style.display = "none"; // Hide otherwise
+    if (resumeButton) {
+        resumeButton.style.display = savedProgress ? "inline" : "none";
     }
 }
 
+// Submit feedback with basic validation
 function submitFeedback(event) {
     event.preventDefault();
 
-    const feedbackText = document.getElementById("feedback").value;
+    const feedbackText = document.getElementById("feedback").value.trim();
     const ratingValue = document.getElementById("rating").value;
 
     if (feedbackText === "") {
-        alert("Please enter feedback before submitting."); // Validation
+        alert("Please enter feedback before submitting.");
         return;
     }
 
-    console.log("Feedback:", feedbackText, "Rating:", ratingValue); // Log feedback and rating
+    console.log("Feedback:", feedbackText, "Rating:", ratingValue);
 
-    // Clear form after submission
+    // Reset form after submission
     document.getElementById("feedback").value = "";
     document.getElementById("rating").value = "1";
 
     alert("Thank you for your feedback!");
 }
 
+// Save character customization with validation
 function saveCharacter(event) {
     event.preventDefault();
 
-    const characterName = document.getElementById("characterName").value;
+    const characterName = document.getElementById("characterName").value.trim();
     const characterGender = document.getElementById("characterGender").value;
+
+    if (characterName === "") {
+        alert("Please enter a valid character name.");
+        return;
+    }
 
     localStorage.setItem("characterName", characterName);
     localStorage.setItem("characterGender", characterGender);
 
-    alert("Character customisation saved!");
+    alert("Character customization saved!");
 }
 
 function getAchievements() {
-    return JSON.parse(localStorage.getItem('achievements')) || {
+    const defaultAchievements = {
         exitForest: false,
         getEatenByCrocodile: false,
         surviveDangerousCreature: false,
         findHiddenPath: false,
     };
+
+    const existingAchievements = JSON.parse(localStorage.getItem("achievements"));
+    return { ...defaultAchievements, ...existingAchievements };
 }
 
 function setAchievements(achievements) {
-    localStorage.setItem('achievements', JSON.stringify(achievements));
+    localStorage.setItem("achievements", JSON.stringify(achievements));
 }
 
 function unlockAchievement(achievementName) {
     const achievements = getAchievements();
     achievements[achievementName] = true; // Mark the achievement as completed
-    setAchievements(achievements); // Save updated achievements to local storage
+    setAchievements(achievements);
+
+    console.log(`Achievement unlocked: ${achievementName}`);
 }
 
+// Check if an achievement is unlocked
 function isAchievementUnlocked(achievementName) {
     const achievements = getAchievements();
     return achievements[achievementName] === true; // Return true if the achievement is unlocked

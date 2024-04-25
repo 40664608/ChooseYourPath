@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Achievements</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
 </head>
 <body>
 <header>
@@ -24,38 +23,32 @@
     <ul>
         <li>
             Successfully exit the forest
-            <span>
-                <script>
-                    document.write(isAchievementUnlocked('exitForest') ? '✔️' : '❌');
-                </script>
-            </span>
+            <span id="exitForestStatus"></span>
         </li>
         <li>
             Get eaten by a crocodile
-            <span>
-                <script>
-                    document.write(isAchievementUnlocked('getEatenByCrocodile') ? '✔️' : '❌');
-                </script>
-            </span>
+            <span id="crocodileStatus"></span>
         </li>
         <li>
             Survive an encounter with a dangerous creature
-            <span>
-                <script>
-                    document.write(isAchievementUnlocked('surviveDangerousCreature') ? '✔️' : '❌');
-                </script>
-            </span>
+            <span id="creatureStatus"></span>
         </li>
         <li>
             Find a hidden path
-            <span>
-                <script>
-                    document.write(isAchievementUnlocked('findHiddenPath') ? '✔️' : '❌');
-                </script>
-            </span>
+            <span id="hiddenPathStatus"></span>
         </li>
     </ul>
 
 </main>
+
+<script src="scripts.js"></script>
+
+<script>
+    document.getElementById('exitForestStatus').textContent = isAchievementUnlocked('exitForest') ? '✔️' : '❌';
+    document.getElementById('crocodileStatus').textContent = isAchievementUnlocked('getEatenByCrocodile') ? '✔️' : '❌';
+    document.getElementById('creatureStatus').textContent = isAchievementUnlocked('surviveDangerousCreature') ? '✔️' : '❌';
+    document.getElementById('hiddenPathStatus').textContent = isAchievementUnlocked('findHiddenPath') ? '✔️' : '❌';
+</script>
+
 </body>
 </html>
