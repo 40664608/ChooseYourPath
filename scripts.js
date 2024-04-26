@@ -1,6 +1,6 @@
 // Start the game from the first scene
 function startGame() {
-    window.location.href = ".idea/src/scenes/scene1.html";
+    window.location.href = "scene1.html";
 }
 
 // Save game progress
